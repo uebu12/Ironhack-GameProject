@@ -1,9 +1,33 @@
 body {
   background-image: url("../img/full-bg.png");
-  /* width: auto;
-  height: 100px; */
-  height: 500px; 
-  background-position: center; 
+
+  height: 500px;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  display: flex;
+  margin: 0;
+}
+.food-container {
+  background-color: blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* align-self: flex-start; */
+}
+.pet {
+  background-color: wheat;
+  align-self: center;
+  width: 400px;
+  height: 400px;
+  top: 50px;
+  left: 310px;
+  position: relative;
+}
+.stats {
+  position: relative;
+  height: 70px;
+  left: 530px;
+  display: flex;
+  flex-direction: column;
 }
