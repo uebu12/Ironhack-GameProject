@@ -16,13 +16,15 @@ body {
   /* align-self: flex-start; */
 }
 .pet {
-  background-color: wheat;
+  background-image: url(../img/pug.png);
   align-self: center;
   width: 400px;
   height: 400px;
   top: 50px;
   left: 310px;
   position: relative;
+  background-position: center;
+  background-size: cover;
 }
 .stats {
   position: relative;
