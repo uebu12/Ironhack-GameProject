@@ -12,15 +12,15 @@ body {
   background-color: blue;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   /* align-self: flex-start; */
 }
 .pet {
-  background-image: url(../img/pug.png);
+  background-image: url(../img/Feliz.png);
   align-self: center;
   width: 400px;
   height: 400px;
-  top: 50px;
+  top: 150px;
   left: 310px;
   position: relative;
   background-position: center;
@@ -32,4 +32,11 @@ body {
   left: 530px;
   display: flex;
   flex-direction: column;
+}
+.foods {
+  /* background-image: url("../img/Pizza\ de\ anchova.png"); */
+  /* background-position: center; */
+  width: 100px;
+  height: 100px;
+  /* background-size: cover; */
 }
