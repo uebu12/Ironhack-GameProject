@@ -40,3 +40,23 @@ body {
   height: 100px;
   /* background-size: cover; */
 }
+.petSick {
+  width: 400px;
+  height: 400px;
+  top: 200px;
+  left: 310px;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../img/Doente.png");
+}
+.petDead {
+  width: 400px;
+  height: 400px;
+  top: 200px;
+  left: 310px;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../img/Morto.png");
+}
