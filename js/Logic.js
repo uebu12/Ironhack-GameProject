@@ -8,9 +8,56 @@ const pets = [
 ];
 const randomIndex = Math.floor(Math.random() * pets.length);
 let pet = new Pet(pets[randomIndex].name, pets[randomIndex].img);
+let petPlacement = document.getElementById("pet");
+
+//Atualizar sprite pro pet sorteado
+function petSprite(pet) {
+  if (pet.name === "Pipa") {
+    petPlacement.classList.add("petPipa");
+    return;
+  } else {
+    petPlacement.classList.add("petMushi");
+    return;
+  }
+}
+// Atualizar sprite dependendo do hp e hunger
+function pipaStatus(petHp, petHunger) {
+  if (pet.name === "Pipa") {
+    if (petHp < 100 && petHp > 0 && petHunger === 0) {
+      petPlacement.classList.remove("petPipa");
+      petPlacement.classList.add("petPipaSick");
+    } else if (petHp < 100 && petHunger > 0) {
+      petPlacement.classList.remove("petPipaSick");
+      petPlacement.classList.add("petPipa");
+    } else if (petHp === 0) {
+      petPlacement.classList.remove("petPipaSick");
+      petPlacement.classList.remove("petPipa");
+      petPlacement.classList.add("petPipaDead");
+    }
+  }
+}
+
+function mushiStatus(petHp, petHunger) {
+  if (pet.name === "Mushi") {
+    if (petHp < 100 && petHp > 0 && petHunger === 0) {
+      petPlacement.classList.remove("petMushi");
+      petPlacement.classList.add("petMushiSick");
+    } else if (petHp < 100 && petHunger > 0) {
+      petPlacement.classList.remove("petMushiSick");
+      petPlacement.classList.add("petMushi");
+    } else if (petHp === 0) {
+      petPlacement.classList.remove("petMushiSick");
+      petPlacement.classList.remove("petMushi");
+      petPlacement.classList.add("petMushiDead");
+    }
+  }
+}
 
 function attHunger() {
   hunger.innerText = pet.hungerPoints;
+  if (pet.hp === 0) {
+    return;
+  }
 }
 
 function attHp() {
@@ -19,14 +66,15 @@ function attHp() {
 
 window.addEventListener("load", () => {
   pet.startHungerInterval(attHunger, attHp);
+  petSprite(pet);
+  pipaStatus(pet.hp, pet.hungerPoints);
 });
 
 foods.addEventListener("click", () => {
-  pet.hungerPoints += 10;
+  pet.hungerPoints += 40;
   attHunger();
 });
 
-// Sortear entre 2 pets ao carregar a pagina
 // Exibir nome do pet
 
 // Interação entre clicar em comida e aumentar contador de fome

@@ -28,7 +28,7 @@ class Pet {
       if (this.hp > 0) {
         this.hp -= 10;
         callback();
-      }
+      } 
     }, 1000);
   }
 }
