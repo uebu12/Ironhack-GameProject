@@ -15,7 +15,7 @@ body {
   justify-content: space-around;
   /* align-self: flex-start; */
 }
-.pet {
+.petPipa {
   background-image: url(../img/Feliz.png);
   align-self: center;
   width: 400px;
@@ -40,7 +40,7 @@ body {
   height: 100px;
   /* background-size: cover; */
 }
-.petSick {
+.petPipaSick {
   width: 400px;
   height: 400px;
   top: 200px;
@@ -50,7 +50,7 @@ body {
   background-size: cover;
   background-image: url("../img/Doente.png");
 }
-.petDead {
+.petPipaDead {
   width: 400px;
   height: 400px;
   top: 200px;
@@ -59,4 +59,37 @@ body {
   background-position: center;
   background-size: cover;
   background-image: url("../img/Morto.png");
+}
+.petMushi {
+  background-image: url(../img/Mushi\ sentado.png);
+  align-self: center;
+  width: 400px;
+  height: 400px;
+  top: 90px;
+  left: 310px;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+}
+.petMushiSick {
+  background-image: url(../img/Mushi\ doentinho.png);
+  align-self: center;
+  width: 400px;
+  height: 400px;
+  top: 90px;
+  left: 310px;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+}
+.petMushiDead {
+  background-image: url(../img/Mushi\ mortinho.png);
+  align-self: center;
+  width: 400px;
+  height: 400px;
+  top: 90px;
+  left: 310px;
+  position: relative;
+  background-position: center;
+  background-size: cover;
 }
