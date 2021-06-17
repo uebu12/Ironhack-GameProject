@@ -19,7 +19,7 @@ body {
   /* align-self: flex-start; */
 }
 .petPipa {
-  background-image: url(../img/Feliz.png);
+  background-image: url("../img/Feliz.png");
   align-self: center;
   width: 400px;
   height: 400px;
@@ -86,7 +86,7 @@ body {
   background-image: url("../img/Morto.png");
 }
 .petMushi {
-  background-image: url(../img/Mushi\ sentado.png);
+  background-image: url("../img/Mushi_sentado.png");
   align-self: center;
   width: 400px;
   height: 400px;
@@ -97,8 +97,7 @@ body {
   background-size: cover;
 }
 .petMushiSick {
-  background-image: url(../img/Mushi\ doentinho.png);
-  align-self: center;
+  background-image: url("../img/Mushi_doentinho.png");
   width: 400px;
   height: 400px;
   top: 140px;
@@ -108,7 +107,7 @@ body {
   background-size: cover;
 }
 .petMushiDead {
-  background-image: url(../img/Mushi\ mortinho.png);
+  background-image: url("../img/Mushi_mortinho.png");
   align-self: center;
   width: 400px;
   height: 400px;
