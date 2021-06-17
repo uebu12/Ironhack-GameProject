@@ -9,14 +9,17 @@ const pets = [
 const randomIndex = Math.floor(Math.random() * pets.length);
 let pet = new Pet(pets[randomIndex].name, pets[randomIndex].img);
 let petPlacement = document.getElementById("pet");
-
-//Atualizar sprite pro pet sorteado
+let petName = document.getElementById("nome");
+//Atualizar sprite e nome pro pet sorteado
 function petSprite(pet) {
   if (pet.name === "Pipa") {
     petPlacement.classList.add("petPipa");
+    petName.classList.add("nameAjst")
+    petName.innerText = "Pipa e Pipo";
     return;
   } else {
     petPlacement.classList.add("petMushi");
+    petName.innerText = "Mushi";
     return;
   }
 }
@@ -75,9 +78,7 @@ foods.addEventListener("click", () => {
   attHunger();
 });
 
-// Exibir nome do pet
 
-// Interação entre clicar em comida e aumentar contador de fome
 
 // Alterar background-image para doente quando fome = 0 e saude diminuindo (talvez usando classes em css)
 // Alterar background-image para morto quando ponto de saude = 0 (talvez usando classes em css)
