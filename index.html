@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Game</title>
+    <title>Virtual pet</title>
     <link href="./Styles/styles.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -18,23 +18,23 @@
     />
   </head>
   <body>
-    <div class="food-container">
+    <div id="foods" class="food-container">
       <div>
-        <img src="./img/Pizza de anchova.png" id="foods" class="foods" />
+        <img src="./img/Pizza de anchova.png"  class="foods" />
       </div>
       <div>
-        <img src="./img/Burrito.png" id="foods" class="foods" />
-      </div>
-
-      <div>
-        <img src="./img/carne.png" id="foods" class="foods2" />
+        <img src="./img/Burrito.png" class="foods" />
       </div>
 
       <div>
-        <img src="./img/peixe.png" id="foods" class="foods2" />
+        <img src="./img/carne.png"  class="foods2" />
+      </div>
+
+      <div>
+        <img src="./img/peixe.png"  class="foods2" />
       </div>
       <div>
-        <img src="./img/salada.png" id="foods" class="foods2" />
+        <img src="./img/salada.png"  class="foods2" />
       </div>
     </div>
     <h1 id="nome"></h1>
@@ -42,6 +42,7 @@
       <span>Health: <span id="hp" class="hp">100</span></span>
       <span>Hunger: <span id="hunger" class="hunger">100</span></span>
     </div>
+    <p class="instructions">Instructions: Click on the food to feed it. That's it. <span class="line">Don't let it die</span></p>
     <div id="pet"></div>
     <script src="./js/Class.js"></script>
     <script src="./js/Logic.js"></script>

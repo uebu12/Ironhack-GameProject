@@ -14,11 +14,12 @@ let petName = document.getElementById("nome");
 function petSprite(pet) {
   if (pet.name === "Pipa") {
     petPlacement.classList.add("petPipa");
-    petName.classList.add("nameAjst")
-    petName.innerText = "Pipa e Pipo";
+    petName.classList.add("nameAjst2");
+    petName.innerText = "Pipa & Pipo";
     return;
   } else {
     petPlacement.classList.add("petMushi");
+    petName.classList.add("nameAjst");
     petName.innerText = "Mushi";
     return;
   }
@@ -74,11 +75,11 @@ window.addEventListener("load", () => {
 });
 
 foods.addEventListener("click", () => {
-  pet.hungerPoints += 40;
-  attHunger();
+  if (pet.hp > 0) {
+    pet.hungerPoints += 40;
+    attHunger();
+  }
 });
-
-
 
 // Alterar background-image para doente quando fome = 0 e saude diminuindo (talvez usando classes em css)
 // Alterar background-image para morto quando ponto de saude = 0 (talvez usando classes em css)

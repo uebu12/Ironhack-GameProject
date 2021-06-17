@@ -15,6 +15,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  align-items: center;
   /* align-self: flex-start; */
 }
 .petPipa {
@@ -51,13 +52,18 @@ body {
 }
 #nome {
   position: absolute;
-  left: 43vw;
+
   top: 20px;
   font-family: "Dancing Script";
   font-size: 80px;
 }
-.nameAjst{
-  right: 50px;
+.nameAjst {
+  left: 580px;
+  color: red;
+}
+.nameAjst2 {
+  left: 500px;
+  color: #ea8a42;
 }
 .petPipaSick {
   width: 400px;
@@ -111,4 +117,15 @@ body {
   position: absolute;
   background-position: center;
   background-size: cover;
+}
+.instructions {
+  text-align: justify;
+  display: block;
+  height: 100px;
+  width: 200px;
+  position: absolute;
+  left: 200px;
+}
+.line {
+  text-decoration: underline;
 }
