@@ -1,5 +1,3 @@
-
-
 # Virtual Pet
 
 ## About the game
@@ -17,13 +15,13 @@ I am a student at Ironhack.
 
 ## Play now!
 
-**********
+---
 
 ## Find out more about this project
 
-**********
+---
 
-## Artists 
+## Artists
 
 https://www.instagram.com/likanakaza/
 https://twitter.com/likanakaza
