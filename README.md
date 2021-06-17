@@ -7,7 +7,7 @@ This is a game built in HTML, CSS and JavaScript as a part of an Ironhack projec
 
 ## So what is the story?
 
-Much like in real life, if you don't feed the creature for to long, it will get sick and die.
+Much like in real life, if you don't feed the creature for too long, it will get sick and die.
 
 ## About the creator
 
