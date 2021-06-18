@@ -28,7 +28,7 @@ function petSprite(pet) {
 // Atualizar sprite dependendo do hp e hunger
 function petStatus(petHp, petHunger) {
   if (pet.name === "Pipa") {
-    if (petHp <= 100 && petHp > 0 && petHunger === 0) {
+    if (petHp < 100 && petHp > 0 && petHunger === 0) {
       petPlacement.classList.remove("petPipa");
       petPlacement.classList.add("petPipaSick");
       console.log("petHp < 100 && petHp > 0 && petHunger === 0");
@@ -42,7 +42,7 @@ function petStatus(petHp, petHunger) {
       petPlacement.classList.add("petPipaDead");
     }
   } else if (pet.name === "Mushi") {
-    if (petHp <= 100 && petHp > 0 && petHunger === 0) {
+    if (petHp < 100 && petHp > 0 && petHunger === 0) {
       petPlacement.classList.remove("petMushi");
       petPlacement.classList.add("petMushiSick");
     } else if (petHp < 100 && petHunger > 0) {
@@ -79,5 +79,5 @@ foods.addEventListener("click", () => {
   }
 });
 
-// Bonus: Sons/música, função de carinho/dormir, tela inicial, dialogo, barras de saúde e fome
+
 // window.location.reload()

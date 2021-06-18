@@ -9,14 +9,14 @@ body {
   margin: 0;
 }
 .food-container {
-  /* background-color: blue; */
+  
 
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   padding: 0;
-  /* align-self: flex-start; */
+  
 }
 .petPipa {
   background-image: url("../img/Feliz.png");
@@ -35,21 +35,21 @@ body {
   left: 530px;
   display: flex;
   flex-direction: column;
+  
 }
 .foods {
-  /* background-image: url("../img/Pizza\ de\ anchova.png"); */
-  /* background-position: center; */
+  
   width: 110px;
   height: 110px;
-  /* background-size: cover; */
+  
 }
 .foods2 {
-  /* background-image: url("../img/Pizza\ de\ anchova.png"); */
-  /* background-position: center; */
+  
+  
   width: 80px;
   height: 80px;
   margin: 0;
-  /* background-size: cover; */
+  
 }
 #nome {
   position: absolute;
