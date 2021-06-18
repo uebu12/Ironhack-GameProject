@@ -16,7 +16,7 @@ I am a student at Ironhack.
 
 ## Play now!
 
-https://uebu12.github.io/Ironhack-GameProject/
+You can play this game [on this link!](https://uebu12.github.io/Ironhack-GameProject/)
 
 ## Find out more about this project
 
