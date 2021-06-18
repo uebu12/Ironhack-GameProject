@@ -9,14 +9,11 @@ body {
   margin: 0;
 }
 .food-container {
-  
-
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   padding: 0;
-  
 }
 .petPipa {
   background-image: url("../img/Feliz.png");
@@ -35,21 +32,15 @@ body {
   left: 530px;
   display: flex;
   flex-direction: column;
-  
 }
 .foods {
-  
   width: 110px;
   height: 110px;
-  
 }
 .foods2 {
-  
-  
   width: 80px;
   height: 80px;
   margin: 0;
-  
 }
 #nome {
   position: absolute;
@@ -133,7 +124,7 @@ body {
   height: 25px;
   width: 25px;
   left: 610px;
-  
+
   position: absolute;
 }
 .meat {
@@ -142,4 +133,13 @@ body {
   width: 21px;
   left: 610px;
   top: 18px;
+}
+.hp {
+  color: crimson;
+  font-weight: bolder;
+}
+
+.hunger {
+  color: brown;
+  font-weight: bolder;
 }
