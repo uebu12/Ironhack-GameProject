@@ -16,11 +16,11 @@ I am a student at Ironhack.
 
 ## Play now!
 
----
+https://uebu12.github.io/Ironhack-GameProject/
 
 ## Find out more about this project
 
----
+You can find out more [here!](https://docs.google.com/presentation/d/1t2wo_WNv9DuOdAKdY2x5MkayvirGFPuD56fcgSOViXQ/edit?usp=sharing)
 
 ## Artists
 
