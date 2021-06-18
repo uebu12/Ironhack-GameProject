@@ -28,6 +28,8 @@ I am a student at Ironhack.
 - https://twitter.com/likanakaza
 - https://shopee.com.br/likanakaza
 
+---
+
 - https://www.instagram.com/vampeluso/
 - https://twitter.com/vampeluso
 - https://www.vampeluso.com/
