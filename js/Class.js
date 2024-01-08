@@ -17,11 +17,11 @@ class Game {
     this.hungerInterval;
     this.healthInterval;
     this.foodValues = [
-      { artist: "vampeluso", img: "/img/Burrito.png" },
-      { artist: "vampeluso", img: "/img/Pizza_de_anchova.png" },
-      { artist: "likanakaza", img: "/img/carne.png" },
-      { artist: "likanakaza", img: "/img/peixe.png" },
-      { artist: "likanakaza", img: "/img/salada.png" },
+      { artist: "vampeluso", img: "/Ironhack-GameProject/img/Burrito.png" },
+      { artist: "vampeluso", img: "/Ironhack-GameProject/img/Pizza_de_anchova.png" },
+      { artist: "likanakaza", img: "/Ironhack-GameProject/img/carne.png" },
+      { artist: "likanakaza", img: "/Ironhack-GameProject/img/peixe.png" },
+      { artist: "likanakaza", img: "/Ironhack-GameProject/img/salada.png" },
     ];
     this.foodObjects = [];
   }
