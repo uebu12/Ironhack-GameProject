@@ -1,16 +1,22 @@
 
-class Game{
-  constructor(petPlacement, petName, hunger, hp){
+class Game {
+  constructor(petPlacement, petName, hunger, hp) {
     this.list = [
-      { name: "Pipa", img: "../img/Feliz.png" , artist: "vampeluso"},
-      { name: "Mushi", img: "../img/Mushi sentado.png", artist:"likanakaza" },
+      { name: "Pipa", img: "../img/Feliz.png", artist: "vampeluso" },
+      { name: "Mushi", img: "../img/Mushi sentado.png", artist: "likanakaza" },
     ];
     this.randomIndex = Math.floor(Math.random() * this.list.length);
-    this.pet = new Pet(this.list[this.randomIndex].name, this.list[this.randomIndex].img, this.list[this.randomIndex].artist);
-    this.petPlacement = petPlacement
-    this.petName = petName
-    this.hunger = hunger
-    this.hp = hp
+    this.pet = new Pet(
+      this.list[this.randomIndex].name,
+      this.list[this.randomIndex].img,
+      this.list[this.randomIndex].artist
+    );
+    this.petPlacement = petPlacement;
+    this.petName = petName;
+    this.hunger = hunger;
+    this.hp = hp;
+    this.hungerInterval;
+    this.healthInterval;
   }
   //Atualizar sprite e nome pro pet sorteado
 
@@ -28,9 +34,10 @@ class Game{
     }
   }
 
+  // Atualizar sprite dependendo do hp e hunger
   petStatus() {
     if (this.pet.name === "Pipa") {
-      if (this.pet.hp < 100 && this.pet.hp > 0 && this.pet.hungerPoints === 0) {
+      if (this.pet.hp < 100 && this.pet.hp > 0 && this.pet.hungerPoints <= 0) {
         this.petPlacement.classList.remove("petPipa");
         this.petPlacement.classList.add("petPipaSick");
         console.log("petHp < 100 && petHp > 0 && petHunger === 0");
@@ -58,15 +65,47 @@ class Game{
     }
   }
   attHunger() {
+    console.log();
     this.hunger.innerText = this.pet.hungerPoints;
   }
   attHp() {
     this.hp.innerText = this.pet.hp;
   }
+  checkIfDead() {
+    return this.pet.hp <= 0;
+  }
 
+  //Intervalo para o contador de fome
+  startHungerInterval() {
+    this.hungerInterval = setInterval(() => {
+      if (this.pet.hungerPoints > 0) {
+        this.pet.hungerPoints -= 20;
+        // callbackHunger();
+        this.attHunger();
+        console.log(this.pet.hungerPoints);
+        clearInterval(this.healthInterval);
+        this.healthInterval = undefined;
+        this.petStatus();
+      } else {
+        if (this.healthInterval === undefined) {
+          this.startHealthInterval();
+        }
+      }
+    }, 1000);
+  }
+
+  //Intervalo para o contador de vida
+  startHealthInterval() {
+    this.healthInterval = setInterval(() => {
+      if (this.pet.hp > 0) {
+        this.pet.hp -= 10;
+        this.attHp();
+        this.petSprite();
+        this.petStatus();
+      }
+    }, 1000);
+  }
 }
-
-
 
 class Pet {
   constructor(name, petImg, artist) {
@@ -76,42 +115,6 @@ class Pet {
     this.petImg = petImg;
     this.hungerInterval;
     this.healthInterval;
-    this.artist = artist
-  }
-
-  checkIfDead() {
-    return this.hp <= 0;
-  }
-  startHungerInterval(callbackHunger, callbackHealth, spriteCallback) {
-    this.hungerInterval = setInterval(() => {
-      if (this.hungerPoints > 0) {
-        this.hungerPoints -= 20;
-        callbackHunger();
-        clearInterval(this.healthInterval);
-        this.healthInterval = undefined;
-        spriteCallback(this.hp, this.hungerPoints);
-      } else {
-        if (this.healthInterval === undefined) {
-          this.startHealthInterval(callbackHealth, spriteCallback);
-        }
-      }
-    }, 1000);
-  }
-  startHealthInterval(callback, spriteCallback) {
-    this.healthInterval = setInterval(() => {
-      if (this.hp > 0) {
-        this.hp -= 10;
-        callback();
-        spriteCallback(this.hp, this.hungerPoints);
-      }
-    }, 1000);
+    this.artist = artist;
   }
 }
-// class Food{
-//   constructor(artist){
-// this.artist = artist
-
-//   }
-
-// }
-

@@ -70,13 +70,15 @@ const foods = document.getElementById("foods");
 // }
 
 const game = new Game(petPlacement, petName, hunger, hp)
+console.log(game.pet)
 
 window.addEventListener("load", () => {
-  game.pet.startHungerInterval(game.attHunger, game.attHp, game.petStatus);
+  game.startHungerInterval();
   game.petSprite();
 });
 
 foods.addEventListener("click", () => {
+
   if (game.pet.hp > 0) {
     game.pet.hungerPoints += 40;
 
