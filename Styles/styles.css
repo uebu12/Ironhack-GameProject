@@ -1,10 +1,12 @@
 body {
   background-image: url("../img/full-bg.png");
   font-family: "Roboto";
-  height: 500px;
-  background-position: center;
+  height: 800px;
+  width: 1100px;
+  
+  /* background-position: center; */
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   display: flex;
   margin: 0;
 }
@@ -15,32 +17,23 @@ body {
   align-items: center;
   padding: 0;
 }
-.petPipa {
-  background-image: url("../img/Feliz.png");
-  align-self: center;
-  width: 400px;
-  height: 400px;
-  top: 200px;
-  left: 520px;
-  position: absolute;
-  background-position: center;
-  background-size: cover;
-}
-.stats {
+
+#stats {
   position: relative;
   height: 70px;
   left: 530px;
   display: flex;
   flex-direction: column;
 }
-.foods {
+.vampeluso {
   width: 110px;
   height: 110px;
 }
-.foods2 {
+
+.likanakaza {
   width: 80px;
   height: 80px;
-  margin: 0;
+  
 }
 #nome {
   position: absolute;
@@ -57,10 +50,21 @@ body {
   left: 500px;
   color: #ea8a42;
 }
+.petPipa {
+  background-image: url("../img/Feliz.png");
+  align-self: center;
+  width: 400px;
+  height: 400px;
+  top: 400px;
+  left: 520px;
+  position: absolute;
+  background-position: center;
+  background-size: cover;
+}
 .petPipaSick {
   width: 400px;
   height: 400px;
-  top: 200px;
+  top: 400px;
   left: 520px;
   position: absolute;
   background-position: center;
@@ -70,7 +74,7 @@ body {
 .petPipaDead {
   width: 400px;
   height: 400px;
-  top: 200px;
+  top: 400px;
   left: 520px;
   position: absolute;
   background-position: center;
@@ -82,32 +86,35 @@ body {
   align-self: center;
   width: 400px;
   height: 400px;
-  top: 140px;
+  top: 350px;
   left: 480px;
   position: absolute;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 .petMushiSick {
   background-image: url("../img/Mushi_doentinho.png");
   width: 400px;
   height: 400px;
-  top: 140px;
+  top: 350px;
   left: 480px;
   position: absolute;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 .petMushiDead {
   background-image: url("../img/Mushi_mortinho.png");
-  align-self: center;
+  /* align-self: center; */
   width: 400px;
   height: 400px;
-  top: 140px;
+  top: 350px;
   left: 480px;
   position: absolute;
-  background-position: center;
-  background-size: cover;
+  /* background-position: center; */
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 .instructions {
   text-align: justify;

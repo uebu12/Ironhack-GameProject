@@ -1,4 +1,3 @@
-
 class Game {
   constructor(petPlacement, petName, hunger, hp) {
     this.list = [
@@ -17,6 +16,19 @@ class Game {
     this.hp = hp;
     this.hungerInterval;
     this.healthInterval;
+    this.foodValues = [
+      { artist: "vampeluso", img: "../img/Burrito.png" },
+      { artist: "vampeluso", img: "../img/Pizza_de_anchova.png" },
+      { artist: "likanakaza", img: "../img/carne.png" },
+      { artist: "likanakaza", img: "../img/peixe.png" },
+      { artist: "likanakaza", img: "../img/salada.png" },
+    ];
+    this.foodObjects = [];
+  }
+
+  myPlay() {
+    const audio = new Audio("../sound/360685__herrabilbo__eating-v2.mp3");
+    audio.play();
   }
   //Atualizar sprite e nome pro pet sorteado
 
@@ -37,30 +49,30 @@ class Game {
   // Atualizar sprite dependendo do hp e hunger
   petStatus() {
     if (this.pet.name === "Pipa") {
-      if (this.pet.hp < 100 && this.pet.hp > 0 && this.pet.hungerPoints <= 0) {
-        this.petPlacement.classList.remove("petPipa");
-        this.petPlacement.classList.add("petPipaSick");
-        console.log("petHp < 100 && petHp > 0 && petHunger === 0");
-      } else if (this.pet.hp < 100 && this.pet.hungerPoints > 0) {
-        this.petPlacement.classList.remove("petPipaSick");
-        this.petPlacement.classList.add("petPipa");
-        console.log("petHp < 100 && petHunger > 0");
-      } else if (this.pet.hp === 0) {
+      if (this.pet.hp === 0) {
         this.petPlacement.classList.remove("petPipaSick");
         this.petPlacement.classList.remove("petPipa");
         this.petPlacement.classList.add("petPipaDead");
+      } else if (this.pet.hungerPoints <= 0) {
+        this.petPlacement.classList.remove("petPipa");
+        this.petPlacement.classList.add("petPipaSick");
+        console.log("petHp < 100 && petHp > 0 && petHunger === 0");
+      } else if (this.pet.hungerPoints > 0) {
+        this.petPlacement.classList.remove("petPipaSick");
+        this.petPlacement.classList.add("petPipa");
+        console.log("petHp < 100 && petHunger > 0");
       }
     } else if (this.pet.name === "Mushi") {
-      if (this.pet.hp < 100 && this.pet.hp > 0 && this.pet.hungerPoints === 0) {
-        this.petPlacement.classList.remove("petMushi");
-        this.petPlacement.classList.add("petMushiSick");
-      } else if (this.pet.hp < 100 && this.pet.hungerPoints > 0) {
-        this.petPlacement.classList.remove("petMushiSick");
-        this.petPlacement.classList.add("petMushi");
-      } else if (this.pet.hp === 0) {
+      if (this.pet.hp === 0) {
         this.petPlacement.classList.remove("petMushiSick");
         this.petPlacement.classList.remove("petMushi");
         this.petPlacement.classList.add("petMushiDead");
+      } else if (this.pet.hungerPoints === 0) {
+        this.petPlacement.classList.remove("petMushi");
+        this.petPlacement.classList.add("petMushiSick");
+      } else if (this.pet.hungerPoints > 0) {
+        this.petPlacement.classList.remove("petMushiSick");
+        this.petPlacement.classList.add("petMushi");
       }
     }
   }
@@ -74,13 +86,27 @@ class Game {
   checkIfDead() {
     return this.pet.hp <= 0;
   }
+  feeding(food) {
+    if (this.pet.artist === food.className) {
+      if (this.pet.hp > 0) {
+        this.pet.hungerPoints += 40;
+        this.petStatus();
+        this.attHunger();
+        this.myPlay();
+      }
+    } else {
+      this.pet.hungerPoints = 0;
+      this.attHunger();
+      this.petStatus();
+      console.log("comida errada");
+    }
+  }
 
   //Intervalo para o contador de fome
   startHungerInterval() {
     this.hungerInterval = setInterval(() => {
       if (this.pet.hungerPoints > 0) {
         this.pet.hungerPoints -= 20;
-        // callbackHunger();
         this.attHunger();
         console.log(this.pet.hungerPoints);
         clearInterval(this.healthInterval);
@@ -105,6 +131,11 @@ class Game {
       }
     }, 1000);
   }
+  createFoodObjects() {
+    this.foodValues.forEach((food) => {
+      this.foodObjects.push(new Food(food.artist, food.img));
+    });
+  }
 }
 
 class Pet {
@@ -116,5 +147,21 @@ class Pet {
     this.hungerInterval;
     this.healthInterval;
     this.artist = artist;
+  }
+}
+
+class Food {
+  constructor(artist, img) {
+    this.artist = artist;
+    this.img = img;
+    this.domElement;
+    this.createDomElement();
+  }
+
+  createDomElement() {
+    this.domElement = document.createElement("div");
+    this.domElement.style.backgroundImage = `url(${this.img})`;
+    this.domElement.style.backgroundSize = "contain";
+    this.domElement.setAttribute("class", this.artist);
   }
 }
