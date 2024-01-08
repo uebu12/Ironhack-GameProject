@@ -27,7 +27,7 @@ class Game {
   }
 
   myPlay() {
-    const audio = new Audio("../sound/360685__herrabilbo__eating-v2.mp3");
+    const audio = new Audio("/Ironhack-GameProject/sound/360685__herrabilbo__eating-v2.mp3");
     audio.play();
   }
   //Atualizar sprite e nome pro pet sorteado
